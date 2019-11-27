@@ -1,12 +1,13 @@
 pool:
   vmImage: 'ubuntu-latest'
 trigger:
-  - master
+  - master/CodeTech.Toolkit.Serializers/*.csproj
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*.csproj'
+    projects: '**/CodeTech.Toolkit.Serializers/*.csproj'
+    arguments: '-o "$(Build.ArtifactStagingDirectory)"'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
