@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>CodeTech.Toolkit.Extensions</RootNamespace>
+    <AssemblyName>CodeTech.Toolkit.Extensions</AssemblyName>
+  </PropertyGroup>
+
+</Project>
