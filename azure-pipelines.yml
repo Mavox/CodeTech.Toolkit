@@ -9,6 +9,6 @@ pool:
 trigger:
   - master/CodeTech.Toolkit.Serializers/*.csproj
 steps:
-  - template: utilities/ProjectBuildTemplate.yaml@utilities
+  - template: ProjectBuildTemplate.yaml@utilities
     parameters: 
       buildfolderName: CodeTech.Toolkit.Serializers
