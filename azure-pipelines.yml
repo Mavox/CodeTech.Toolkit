@@ -1,6 +1,6 @@
 resources:
  repositories:
-   - repository: utiities
+   - repository: utilities
      type: git
      name: Utilities
 
@@ -9,6 +9,6 @@ pool:
 trigger:
   - master/CodeTech.Toolkit.Serializers/*.csproj
 steps:
-  - template: utiities/ProjectBuildTemplate.yaml@templates
+  - template: ProjectBuildTemplate.yaml@utilities
     parameters: 
       buildfolderName: CodeTech.Toolkit.Serializers
