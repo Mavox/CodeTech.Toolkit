@@ -8,6 +8,18 @@ steps:
     command: 'build'
     projects: '**/CodeTech.Toolkit.Serializers/*.csproj'
     arguments: '-o "$(Build.ArtifactStagingDirectory)"'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/CodeTech.Toolkit.Serializers.Tests/*.Tests.csproj'
+    testRunTitle: 'CodeTech.Toolkit.Serializers Tests'
+    arguments: '-l:trx;LogFileName="$(Build.ArtifactStagingDirectory)/testresult.xml"'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '$(Build.ArtifactStagingDirectory)/testresult.xml'
+    failTaskOnFailedTests: true
+    testRunTitle: 'CodeTech.Toolkit.Serializers Tests'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
