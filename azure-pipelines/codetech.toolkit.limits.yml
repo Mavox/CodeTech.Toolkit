@@ -7,8 +7,8 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 trigger:
-  - master/CodeTech.Toolkit.Serializers/*.csproj
+  - master/CodeTech.Toolkit.Limits/*.csproj
 steps:
   - template: ProjectBuildTemplate.yaml@utilities
     parameters: 
-      buildfolderName: CodeTech.Toolkit.Serializers
+      buildfolderName: CodeTech.Toolkit.Limits
