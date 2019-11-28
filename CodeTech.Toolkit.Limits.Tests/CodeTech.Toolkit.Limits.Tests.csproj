@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeTech.Toolkit.Limit\CodeTech.Toolkit.Limit.csproj" />
+    <ProjectReference Include="..\CodeTech.Toolkit.Limits\CodeTech.Toolkit.Limits.csproj" />
   </ItemGroup>
 
 </Project>
