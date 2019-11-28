@@ -1,0 +1,14 @@
+resources:
+ repositories:
+   - repository: utilities
+     type: git
+     name: Utilities
+
+pool:
+  vmImage: 'ubuntu-latest'
+trigger:
+  - master/CodeTech.Toolkit.Extensions/*.csproj
+steps:
+  - template: ProjectBuildTemplate.yaml@utilities
+    parameters: 
+      buildfolderName: CodeTech.Toolkit.Extensions
