@@ -7,7 +7,12 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 trigger:
-  - master/CodeTech.Toolkit.Serializers
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - CodeTech.Toolkit.Serializers/*
 steps:
   - template: ProjectBuildTemplate.yaml@utilities
     parameters: 

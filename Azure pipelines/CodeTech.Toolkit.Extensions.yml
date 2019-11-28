@@ -7,7 +7,12 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 trigger:
-  - master/CodeTech.Toolkit.Extensions
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - CodeTech.Toolkit.Extensions/*
 steps:
   - template: ProjectBuildTemplate.yaml@utilities
     parameters: 

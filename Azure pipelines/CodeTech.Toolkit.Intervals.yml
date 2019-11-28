@@ -7,7 +7,12 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 trigger:
-  - master/CodeTech.Toolkit.Intervals
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - CodeTech.Toolkit.Intervals/*
 steps:
   - template: ProjectBuildTemplate.yaml@utilities
     parameters: 
