@@ -7,7 +7,7 @@ namespace CodeTech.Toolkit.Extensions
     /// <summary>
     /// Extensions for Enums
     /// </summary>
-    public static class EnumExtensions 
+    public static class EnumExtensions
     {
         /// <summary>
         /// Gets the first attribute of the provided type from the provided enum value
