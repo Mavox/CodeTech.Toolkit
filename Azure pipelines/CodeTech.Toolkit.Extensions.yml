@@ -2,7 +2,7 @@ resources:
  repositories:
    - repository: utilities
      type: git
-     name: Utilities
+     name: Utilities/BuildTemplates
 
 pool:
   vmImage: 'ubuntu-latest'
