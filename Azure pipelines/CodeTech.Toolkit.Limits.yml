@@ -14,6 +14,6 @@ trigger:
     include:
     - CodeTech.Toolkit.Limits/*
 steps:
-  - template: ProjectBuildTemplate.yaml@utilities
+  - template: BuildTemplates/ProjectBuildTemplate.yaml@utilities
     parameters: 
       buildfolderName: CodeTech.Toolkit.Limits
