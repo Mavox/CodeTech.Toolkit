@@ -2,10 +2,11 @@
 <package>
   <metadata>
     <id>CodeTech.Toolkit.Intervals</id>
-    <version>0.0.0</version>
+    <version>0.{ will be filled in during build }</version>
     <title>CodeTech.Toolkit.Intervals</title>
     <authors>Andreas Russo-Frisk</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Classes and methods for dealing with ranges and intervals of values</description>
+    <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
   </metadata>
 </package>

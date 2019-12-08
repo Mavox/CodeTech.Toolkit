@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>CodeTech.Toolkit.Extensions</id>
-    <version>0.0.0</version>
+    <version>0.{ will be filled in during build }</version>
     <title>CodeTech.Toolkit.Extensions</title>
     <authors>Andreas Russo-Frisk</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
