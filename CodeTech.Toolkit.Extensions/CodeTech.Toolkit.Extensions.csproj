@@ -6,4 +6,14 @@
     <AssemblyName>CodeTech.Toolkit.Extensions</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="nuget.nuspec" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="nuget.nuspec">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
