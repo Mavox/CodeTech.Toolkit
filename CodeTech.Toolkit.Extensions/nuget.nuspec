@@ -7,6 +7,6 @@
     <authors>Andreas Russo-Frisk</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Various extension methods for simplifying common operations</description>
-    <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
+    <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" commit="{ will be filled in during build }" />
   </metadata>
 </package>
