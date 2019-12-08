@@ -2,7 +2,7 @@ resources:
  repositories:
    - repository: utilities
      type: git
-     name: Utilities/BuildTemplates
+     name: Utilities
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -14,6 +14,6 @@ trigger:
     include:
     - CodeTech.Toolkit.Extensions/*
 steps:
-  - template: ProjectBuildTemplate.yaml@utilities
+  - template: ProjectBuildTemplate.yaml@utilities/BuildTemplates
     parameters: 
       buildfolderName: CodeTech.Toolkit.Extensions
