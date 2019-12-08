@@ -17,3 +17,4 @@ steps:
   - template: BuildTemplates/ProjectBuildTemplate.yaml@utilities
     parameters: 
       buildfolderName: CodeTech.Toolkit.Serializers
+      configuration: Debug
