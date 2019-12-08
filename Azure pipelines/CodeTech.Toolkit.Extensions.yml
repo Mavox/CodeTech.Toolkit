@@ -14,6 +14,6 @@ trigger:
     include:
     - CodeTech.Toolkit.Extensions/*
 steps:
-  - template: BuildTemplates/ProjectBuildTemplate.yaml@utilities
+  - template: ProjectBuildTemplate.yaml@utilities
     parameters: 
       buildfolderName: CodeTech.Toolkit.Extensions
