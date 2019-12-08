@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>CodeTech.Toolkit.Serializers</id>
+    <version>0.0.0</version>
+    <title>CodeTech.Toolkit.Serializers</title>
+    <authors>Andreas Russo-Frisk</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Classes and methods for restructuring and serializing data</description>
+  </metadata>
+</package>

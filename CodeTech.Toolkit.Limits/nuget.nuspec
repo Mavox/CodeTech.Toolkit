@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>CodeTech.Toolkit.Limits</id>
+    <version>0.0.0</version>
+    <title>CodeTech.Toolkit.Limits</title>
+    <authors>Andreas Russo-Frisk</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Classes and methods for controlling time sensitive flows of code</description>
+  </metadata>
+</package>

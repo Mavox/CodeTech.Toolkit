@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>CodeTech.Toolkit.Intervals</id>
+    <version>0.0.0</version>
+    <title>CodeTech.Toolkit.Intervals</title>
+    <authors>Andreas Russo-Frisk</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Classes and methods for dealing with ranges and intervals of values</description>
+  </metadata>
+</package>
