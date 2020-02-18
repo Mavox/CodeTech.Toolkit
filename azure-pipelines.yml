@@ -1,0 +1,20 @@
+resources:
+ repositories:
+   - repository: utilities
+     type: git
+     name: Utilities
+
+pool:
+  vmImage: 'ubuntu-latest'
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - CodeTech.Toolkit.Web.HostedServices/*
+steps:
+  - template: BuildTemplates/ProjectBuildTemplate.yaml@utilities
+    parameters: 
+      buildfolderName: CodeTech.Toolkit.Web.HostedServices
+      configuration: Debug
