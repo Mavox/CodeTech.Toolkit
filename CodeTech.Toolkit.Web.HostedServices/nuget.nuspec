@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>CodeTech.Toolkit.Web.HostedServices</id>
+    <version>1.{ will be filled in during build }</version>
+    <title>CodeTech.Toolkit.Web.HostedServices</title>
+    <authors>Andreas Russo-Frisk</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Classes and methods for managing hosted services</description>
+    <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
+    <projectUrl>https://github.com/Mavox/CodeTech.Toolkit/tree/master/CodeTech.Toolkit.Web.HostedServices</projectUrl>
+  </metadata>
+</package>
