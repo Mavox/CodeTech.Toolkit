@@ -93,28 +93,32 @@ namespace CodeTech.Toolkit.Web.HostedServices.Tests
             Assert.IsFalse(service.IsProcessingTasks, "Service did not finish processing work");
         }
 
-        /// <summary>
-        /// Makes sure work assigned to be run in paralell actually runs in paralell
-        /// </summary>
-        [TestMethod]
-        public async Task CheckParalellWork()
-        {
-            var cancellationTokenSource = new CancellationTokenSource();
-            var service = new BackgroundWorkerService();
-            await service.StartAsync(cancellationTokenSource.Token);
-            int? workThreadId = null;
-            service.Run(token =>
-            {
-                workThreadId = Thread.CurrentThread.ManagedThreadId;
-            });
+        // The test below needs to be reconsidered or redesigned.
+        // We can only guarantee that the work is going to be scheduled on the thread pool.
+        // We can not guarantee that it will be a separate thread (nor should we).
 
-            while (!workThreadId.HasValue)
-            {
-                await Task.Delay(100);
-            }
+        ///// <summary>
+        ///// Makes sure work assigned to be run in paralell actually runs in paralell
+        ///// </summary>
+        //[TestMethod]
+        //public async Task CheckParalellWork()
+        //{
+        //    var cancellationTokenSource = new CancellationTokenSource();
+        //    var service = new BackgroundWorkerService();
+        //    await service.StartAsync(cancellationTokenSource.Token);
+        //    int? workThreadId = null;
+        //    service.Run(token =>
+        //    {
+        //        workThreadId = Thread.CurrentThread.ManagedThreadId;
+        //    });
 
-            Assert.AreNotEqual(Thread.CurrentThread.ManagedThreadId, workThreadId.Value, "Work was performed on the same thread as the service");
-        }
+        //    while (!workThreadId.HasValue)
+        //    {
+        //        await Task.Delay(100);
+        //    }
+
+        //    Assert.AreNotEqual(Thread.CurrentThread.ManagedThreadId, workThreadId.Value, "Work was performed on the same thread as the service");
+        //}
 
         /// <summary>
         /// Makes sure the service registrers stops correctly
