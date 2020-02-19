@@ -66,22 +66,31 @@ namespace CodeTech.Toolkit.Web.HostedServices.Tests
         public async Task CheckStateOnFinishedWork()
         {
             var cancellationTokenSource = new CancellationTokenSource();
-            var delayBetweenStopChecks = 300;
             var service = new BackgroundWorkerService();
             await service.StartAsync(cancellationTokenSource.Token);
+            bool finishedExecuting = false;
             bool continueExecution = true;
-            service.RunAsync(CreateTestTaskAsync(delayBetweenStopChecks, token =>
+            service.RunAsync(CreateTestTaskAsync(300, token =>
             {
+                if (!continueExecution)
+                {
+                    finishedExecuting = true;
+                }
                 return continueExecution;
             }));
-            continueExecution = false;
-            // We wait the same amount of time our artificial work does between checks
-            // to guarantee that it has a chance to stop properly.
-            await Task.Delay(delayBetweenStopChecks);
+
+            // Our service should now be processing the task until we set the tas as finished
+            Assert.IsTrue(service.IsProcessingTasks, "Service did not process the work");
+
+            continueExecution = false; // We set the task as finished
+            while (!finishedExecuting) // We wait until our work has noticed our flag
+            {
+                await Task.Delay(100);
+            }
+            
             // At this point our artificial work should have finished.
             // The service should no longer be processing work.
             Assert.IsFalse(service.IsProcessingTasks, "Service did not finish processing work");
-
         }
 
         /// <summary>
@@ -98,7 +107,12 @@ namespace CodeTech.Toolkit.Web.HostedServices.Tests
             {
                 workThreadId = Thread.CurrentThread.ManagedThreadId;
             });
-            Assert.IsTrue(workThreadId.HasValue, "Work did not have time to finish");
+
+            while (!workThreadId.HasValue)
+            {
+                await Task.Delay(100);
+            }
+
             Assert.AreNotEqual(Thread.CurrentThread.ManagedThreadId, workThreadId.Value, "Work was performed on the same thread as the service");
         }
 
