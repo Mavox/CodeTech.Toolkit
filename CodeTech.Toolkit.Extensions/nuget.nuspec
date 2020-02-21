@@ -8,5 +8,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Various extension methods for simplifying common operations</description>
     <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
+    <projectUrl>https://github.com/Mavox/CodeTech.Toolkit/tree/master/CodeTech.Toolkit.Extensions</projectUrl>
   </metadata>
 </package>

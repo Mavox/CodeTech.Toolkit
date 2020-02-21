@@ -8,5 +8,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Classes and methods for restructuring and serializing data</description>
     <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
+    <projectUrl>https://github.com/Mavox/CodeTech.Toolkit/tree/master/CodeTech.Toolkit.Serializers</projectUrl>
   </metadata>
 </package>
