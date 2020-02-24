@@ -18,3 +18,4 @@ steps:
     parameters: 
       buildfolderName: CodeTech.Toolkit.Serializers
       configuration: Debug
+      
