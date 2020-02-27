@@ -16,6 +16,7 @@ trigger:
 steps:
   - checkout: self
   - checkout: Utilities
+  - script: dir
   - template: BuildTemplates/TestAndBuildNetCoreProject.yaml@utilities
     parameters: 
       buildfolderName: CodeTech.Toolkit.Extensions
