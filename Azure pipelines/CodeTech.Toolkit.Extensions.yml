@@ -16,6 +16,9 @@ trigger:
 steps:
   - checkout: self
   - checkout: Utilities
+  - task: NuGetToolInstaller@1
+    inputs:
+      versionSpec: '5.4.0'
   - template: BuildTemplates/TestAndBuildNetCoreProject.yaml@utilities
     parameters: 
       sourceDirectory: $(Build.SourcesDirectory)/CodeTech.Toolkit
