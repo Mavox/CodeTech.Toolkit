@@ -14,7 +14,23 @@ trigger:
     include:
     - CodeTech.Toolkit.Extensions/*
 steps:
-  - template: BuildTemplates/ProjectBuildTemplate.yaml@utilities
+  - checkout: self
+  - checkout: Utilities
+  - template: BuildTemplates/TestAndBuildNetCoreProject.yaml@utilities
     parameters: 
+      sourceDirectory: $(Build.SourcesDirectory)/CodeTech.Toolkit
       buildfolderName: CodeTech.Toolkit.Extensions
       configuration: Debug
+      outputFolder: $(Build.ArtifactStagingDirectory)
+  - template: BuildTemplates/CreateNuGetPackage.yaml@utilities
+    parameters: 
+      packageContentFolder: $(Build.ArtifactStagingDirectory)
+      packageIcon: Utilities/Images/CodeTechToolkitLogo.png
+      nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit/CodeTech.Toolkit.Extensions
+      outputFolder: $(Build.ArtifactStagingDirectory)
+  - task: PublishBuildArtifacts@1
+    displayName: Deliver NuGet package as an artifact
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
