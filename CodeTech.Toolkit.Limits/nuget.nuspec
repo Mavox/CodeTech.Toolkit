@@ -10,4 +10,7 @@
     <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
     <projectUrl>https://github.com/Mavox/CodeTech.Toolkit/tree/master/CodeTech.Toolkit.Limits</projectUrl>
   </metadata>
+  <files>
+
+  </files>
 </package>
