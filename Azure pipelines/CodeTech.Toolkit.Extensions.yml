@@ -16,7 +16,6 @@ trigger:
 steps:
   - checkout: self
   - checkout: Utilities
-  - script: dir
   - template: BuildTemplates/TestAndBuildNetCoreProject.yaml@utilities
     parameters: 
       sourceDirectory: $(Build.SourcesDirectory)/CodeTech.Toolkit
