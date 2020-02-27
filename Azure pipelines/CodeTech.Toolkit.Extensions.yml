@@ -19,6 +19,7 @@ steps:
   - script: dir
   - template: BuildTemplates/TestAndBuildNetCoreProject.yaml@utilities
     parameters: 
+      sourceDirectory: $(Build.SourcesDirectory)/CodeTech.Toolkit
       buildfolderName: CodeTech.Toolkit.Extensions
       configuration: Debug
       outputFolder: $(Build.ArtifactStagingDirectory)
@@ -26,7 +27,7 @@ steps:
     parameters: 
       packageContentFolder: $(Build.ArtifactStagingDirectory)
       packageIcon: Utilities/Images/CodeTechToolkitLogo.png
-      nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit.Extensions
+      nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit/CodeTech.Toolkit.Extensions
       outputFolder: $(Build.ArtifactStagingDirectory)
   - task: PublishBuildArtifacts@1
     displayName: Deliver NuGet package as an artifact
