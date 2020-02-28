@@ -24,13 +24,14 @@ steps:
       sourceDirectory: $(Build.SourcesDirectory)/CodeTech.Toolkit
       buildfolderName: CodeTech.Toolkit.Extensions
       configuration: Debug
-      outputFolder: $(Build.ArtifactStagingDirectory)
+      outputFolder: $(Build.ArtifactStagingDirectory)      
   - template: BuildTemplates/CreateNuGetPackage.yaml@utilities
     parameters: 
       packageContentFolder: $(Build.ArtifactStagingDirectory)
       packageIcon: Utilities/Images/CodeTechToolkitLogo.png
       nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit/CodeTech.Toolkit.Extensions
       outputFolder: $(Build.ArtifactStagingDirectory)
+      desiredPackageFileName: CodeTech.Toolkit.Extensions.nupkg
   - task: PublishBuildArtifacts@1
     displayName: Deliver NuGet package as an artifact
     inputs:
