@@ -32,13 +32,11 @@ steps:
       nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit/CodeTech.Toolkit.Extensions
       outputFolder: $(Build.ArtifactStagingDirectory)
       desiredPackageFileName: CodeTech.Toolkit.Extensions.nupkg
-  - task: DeleteFiles@1
-    displayName: Deliver NuGet package as an artifact
+  - task: PowerShell@2
+    displayName: Move package to output folder
     inputs:
-      SourceFolder: '$(Build.ArtifactStagingDirectory)'
-      Contents: |
-        **
-        !CodeTech.Toolkit.Extensions.nupkg
+      targetType: 'inline'
+      script: 'Get-ChildItem -Path "$(Build.ArtifactStagingDirectory)" -Exclude "CodeTech.Toolkit.Extensions.nupkg" | Remove-Item -Recurse -Force'
   - task: PublishBuildArtifacts@1
     displayName: Deliver NuGet package as an artifact
     inputs:
