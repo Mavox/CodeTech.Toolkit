@@ -3,6 +3,7 @@
   <metadata>
     <id>CodeTech.Toolkit.Limits</id>
     <version>1.{ will be filled in during build }</version>
+    <icon>{ will be filled in during build }</icon>
     <title>CodeTech.Toolkit.Limits</title>
     <authors>Andreas Russo-Frisk</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
