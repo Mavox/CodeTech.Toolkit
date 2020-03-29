@@ -14,7 +14,32 @@ trigger:
     include:
     - CodeTech.Toolkit.Extensions/*
 steps:
-  - template: BuildTemplates/ProjectBuildTemplate.yaml@utilities
+  - checkout: self
+  - checkout: Utilities
+  - task: NuGetToolInstaller@1
+    inputs:
+      versionSpec: '5.4.0'
+  - template: BuildTemplates/TestAndBuildNetCoreProject.yaml@utilities
     parameters: 
+      sourceDirectory: $(Build.SourcesDirectory)/CodeTech.Toolkit
       buildfolderName: CodeTech.Toolkit.Extensions
       configuration: Debug
+      outputFolder: $(Build.ArtifactStagingDirectory)      
+  - template: BuildTemplates/CreateNuGetPackage.yaml@utilities
+    parameters: 
+      packageContentFolder: $(Build.ArtifactStagingDirectory)
+      packageIcon: Utilities/Images/CodeTechToolkitLogo.png
+      nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit/CodeTech.Toolkit.Extensions
+      outputFolder: $(Build.ArtifactStagingDirectory)
+      desiredPackageFileName: CodeTech.Toolkit.Extensions.nupkg
+  - task: PowerShell@2
+    displayName: Move package to output folder
+    inputs:
+      targetType: 'inline'
+      script: 'Get-ChildItem -Path "$(Build.ArtifactStagingDirectory)" -Exclude "CodeTech.Toolkit.Extensions.nupkg" | Remove-Item -Recurse -Force'
+  - task: PublishBuildArtifacts@1
+    displayName: Deliver NuGet package as an artifact
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'

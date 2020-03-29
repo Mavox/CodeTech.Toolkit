@@ -12,7 +12,7 @@ trigger:
     - master
   paths:
     include:
-    - CodeTech.Toolkit.Intervals/*
+    - CodeTech.Toolkit.Web.HostedServices/*
 steps:
   - checkout: self
   - checkout: Utilities
@@ -22,21 +22,21 @@ steps:
   - template: BuildTemplates/TestAndBuildNetCoreProject.yaml@utilities
     parameters: 
       sourceDirectory: $(Build.SourcesDirectory)/CodeTech.Toolkit
-      buildfolderName: CodeTech.Toolkit.Intervals
+      buildfolderName: CodeTech.Toolkit.Web.HostedServices
       configuration: Debug
       outputFolder: $(Build.ArtifactStagingDirectory)      
   - template: BuildTemplates/CreateNuGetPackage.yaml@utilities
     parameters: 
       packageContentFolder: $(Build.ArtifactStagingDirectory)
       packageIcon: Utilities/Images/CodeTechToolkitLogo.png
-      nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit/CodeTech.Toolkit.Intervals
+      nuSpecFolder: $(Build.SourcesDirectory)/CodeTech.Toolkit/CodeTech.Toolkit.Web.HostedServices
       outputFolder: $(Build.ArtifactStagingDirectory)
-      desiredPackageFileName: CodeTech.Toolkit.Intervals.nupkg
+      desiredPackageFileName: CodeTech.Toolkit.Web.HostedServices.nupkg
   - task: PowerShell@2
     displayName: Move package to output folder
     inputs:
       targetType: 'inline'
-      script: 'Get-ChildItem -Path "$(Build.ArtifactStagingDirectory)" -Exclude "CodeTech.Toolkit.Intervals.nupkg" | Remove-Item -Recurse -Force'
+      script: 'Get-ChildItem -Path "$(Build.ArtifactStagingDirectory)" -Exclude "CodeTech.Toolkit.Web.HostedServices.nupkg" | Remove-Item -Recurse -Force'
   - task: PublishBuildArtifacts@1
     displayName: Deliver NuGet package as an artifact
     inputs:

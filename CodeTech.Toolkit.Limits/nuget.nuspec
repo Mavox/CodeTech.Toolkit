@@ -3,11 +3,13 @@
   <metadata>
     <id>CodeTech.Toolkit.Limits</id>
     <version>1.{ will be filled in during build }</version>
+    <icon>{ will be filled in during build }</icon>
     <title>CodeTech.Toolkit.Limits</title>
     <authors>Andreas Russo-Frisk</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Classes and methods for controlling time sensitive flows of code</description>
     <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
+    <projectUrl>https://github.com/Mavox/CodeTech.Toolkit/tree/master/CodeTech.Toolkit.Limits</projectUrl>
   </metadata>
   <files>
     <file src="lib\**" target="lib/{framework name}[{version}]" />
