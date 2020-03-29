@@ -12,6 +12,6 @@
     <projectUrl>https://github.com/Mavox/CodeTech.Toolkit/tree/master/CodeTech.Toolkit.Limits</projectUrl>
   </metadata>
   <files>
-    <file src="lib\**" />
+    <file src="lib\**" target="lib/" />
   </files>
 </package>
