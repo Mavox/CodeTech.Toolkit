@@ -9,4 +9,7 @@
     <description>Classes and methods for dealing with ranges and intervals of values</description>
     <repository type="git" url="https://github.com/Mavox/CodeTech.Toolkit.git" branch="master" commit="{ will be filled in during build }" />
   </metadata>
+  <files>
+    <file src="lib\**" target="lib/{framework name}[{version}]" />
+  </files>
 </package>
